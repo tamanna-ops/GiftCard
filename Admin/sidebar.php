@@ -16,6 +16,30 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-user-plus"></i>
+                        <span key="t-ecommerce">Category</span>
+                    </a>
+
+                    <ul class="sub-menu" aria-expanded="false">
+                    <li><a href="category.php" key="t-products"><i class="bx bxs-show"></i> Add / View Category</a></li>
+
+                    </ul>
+                </li> 
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-user-plus"></i>
+                        <span key="t-ecommerce">Product</span>
+                    </a>
+
+                    <ul class="sub-menu" aria-expanded="false">
+                    <li><a href="addProduct.php" key="t-products"><i class="bx bxs-show"></i> Add Product</a></li>
+                    <li><a href="viewProduct.php" key="t-products"><i class="bx bxs-show"></i> View Product</a></li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-user-plus"></i>
                         <span key="t-ecommerce">Customers</span>
                     </a>
 
