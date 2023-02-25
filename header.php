@@ -6,7 +6,7 @@
                             <i class="fas fa-bars"></i>
                         </button>
                         <a href="index.php" class="logo">
-                            <img src="assets/images/demoes/demo18/.png" alt="Porto Logo">
+                            <img src="assets/images/logo.png" alt="Porto Logo">
                         </a>
                     </div><!-- End .header-left -->
 
