@@ -17,7 +17,7 @@ if (strlen($lgmail) == 0) {
     <head>
 
         <meta charset="utf-8" />
-        <title>Add Members || Admin Panel </title>
+        <title>Add Customers || Admin Panel </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
@@ -64,12 +64,12 @@ if (strlen($lgmail) == 0) {
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h3 class="mb-sm-0 font-size-18" style="display: none;" id="headi">Add Members</h3>
-                                    <button type="button" class="btn btn-success" onclick="showRow()" id="btnShow"><i class="bx bx-plus"></i>Add Members</button>
+                                    <h3 class="mb-sm-0 font-size-18" style="display: none;" id="headi">Add Customers</h3>
+                                    <button type="button" class="btn btn-success" onclick="showRow()" id="btnShow"><i class="bx bx-plus"></i>Add Customers</button>
                                     <div class="">
                                         <ol class="breadcrumb m-0">
                                             <li>Dashboard / </li>
-                                            <li>Add Members</li>
+                                            <li>Add Customers</li>
                                         </ol>
                                     </div>
 
@@ -78,58 +78,11 @@ if (strlen($lgmail) == 0) {
                         </div>
                         <!-- end page title -->
 
-
-                        <div class="row" id="regRow" style="display: none;">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <!-- <h4 class="card-title">Basic Information</h4> -->
-
-                                        <form id="myform" method="POST">
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <div class="mb-3">
-                                                        <label for="mem_name">Name<span class="text-danger">*</span></label>
-                                                        <input id="mem_name" name="mem_name" type="text" class="form-control" placeholder="Name" required>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <div class="mb-3">
-                                                        <label class="control-label">Mobile<span class="text-danger">*</span></label>
-                                                        <input id="mem_mobile" name="mem_mobile" type="number" min="1000000000" max="9999999999" class="form-control" placeholder="Mobile" required>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <div class="mb-3">
-                                                        <label for="mem_email">Email</label>
-                                                        <input id="mem_email" name="mem_email" type="email" class="form-control" placeholder="Email" required>
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                            <div class="d-flex flex-wrap gap-2">
-                                                <input type="submit" onclick="return add_member()" value="Add Member" class="btn btn-primary waves-effect waves-light">
-                                                <!-- <input type="submit" class="btn btn-primary waves-effect waves-light" id="sa-success" value="Click me"> -->
-
-
-                                                <button type="button" class="btn btn-secondary waves-effect waves-light" onclick="return CloseRow()">Cancel</button>
-                                            </div>
-                                        </form>
-                                        <div class="col-xl-3 col-lg-4 col-sm-6 mb-2">
-
-                                        </div>
-
-
-
-                                    </div>
-                                </div>
-                            </div> <!-- end col -->
-                        </div> <!-- end row -->
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
                                     <div class="bg-dark text-white p-2">
-                                        <h3 class="card-title">All Members</h3>
+                                        <h3 class="card-title">All Customers</h3>
                                     </div>
                                     <div class="card-body">
                                         <div class="container">
@@ -140,49 +93,30 @@ if (strlen($lgmail) == 0) {
                                                             <tr>
                                                                 <th>ID</th>
                                                                 <th style="display:none" data-field="mem_id"> mem_id</th>
-                                                                <th>Member Name</th>
-                                                                <th>Member Mobile</th>
-                                                                <th>Member Email</th>
+                                                                <th>Customer Name</th>
+                                                                <th>Customer Mobile</th>
+                                                                <th>Customer Email</th>
                                                                 <th>Action</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <?php
-                                                            $getMember = " SELECT * FROM tbl_members WHERE mem_status=1 ORDER BY mem_id DESC";
-                                                            $Selectquery = $conn->prepare($getMember);
-                                                            $Selectquery->execute();
-                                                            $results = $Selectquery->fetchAll(PDO::FETCH_OBJ);
-                                                            if ($Selectquery->rowCount() > 0) {
-                                                                $sr = 1;
-                                                                foreach ($results as $result) {
-                                                            ?>
+                                                           
                                                                     <tr>
-                                                                        <td data-field="id"><?php echo $sr; ?></td>
-                                                                        <td style="display:none" data-field="mem_id"><?php echo htmlentities($result->mem_id); ?></td>
-                                                                        <td data-field="name"><?php echo htmlentities($result->mem_name); ?></td>
-                                                                        <td data-field="mobile"><?php echo htmlentities($result->mem_mobile); ?></td>
-                                                                        <td data-field="email"><?php echo htmlentities($result->mem_email); ?></td>
-
-
-
+                                                                        <td data-field="id">Sr hidden</td>
+                                                                        <td style="display:none" data-field="mem_id">Hidden id to sebd</td>
+                                                                        <td data-field="name">Name</td>
+                                                                        <td data-field="mobile">Mobile</td>
+                                                                        <td data-field="email">Email</td>
                                                                         <td style="width: 100px">
                                                                             <a class="btn btn-outline-info btn-sm edit" title="Edit">
                                                                                 <i class="fas fa-pencil-alt"></i>
                                                                             </a>
-                                                                            <a class="btn btn-outline-danger  btn-sm deletes" title="Delete" onclick="return delete_record(<?php echo htmlentities($result->mem_id); ?>)">
+                                                                            <a class="btn btn-outline-danger  btn-sm deletes" title="Delete" onclick="return delete_record()">
                                                                                 <i class="fas fa-trash"></i>
                                                                             </a>
                                                                         </td>
 
                                                                     </tr>
-                                                            <?php $sr++;
-                                                                }
-                                                            } else {
-                                                                echo "No Record Found !";
-                                                            }
-                                                            ?>
-
-
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -222,7 +156,7 @@ if (strlen($lgmail) == 0) {
         <!-- App js -->
         <script src="assets/js/jquery.dataTables.min.js"></script>
         <script src="assets/js/app.js"></script>
-        <script src="assets/js/addMember.js"></script>
+        <script src="assets/js/addCustomer.js"></script>
 
        
 

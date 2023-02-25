@@ -4,35 +4,6 @@ $(document).ready(function() {
 });
  
  
-function showRow() {
-    const form = document.getElementById('regRow');
-    const btnShowVar = document.getElementById('btnShow');
-    const headin = document.getElementById('headi');
-    if (form.style.display === 'none') {
-        form.style.display = 'block';
-        btnShowVar.style.display='none';
-        headin.style.display='block';
-    } else {
-        form.style.display = 'none';
-        btnShowVar.style.display='block';
-
-    }
-}
-
-function CloseRow() {
-    const form = document.getElementById('regRow');
-    const btnShowVar = document.getElementById('btnShow');
-    const headin = document.getElementById('headi');
-    if (form.style.display === 'block') {
-        form.style.display = 'none';
-        btnShowVar.style.display='block';
-        headin.style.display='none';
-    } else {
-        form.style.display = 'block';
-        btnShowVar.style.display='none';
-
-    }
-}
 
 function add_member() {
     event.preventDefault();
